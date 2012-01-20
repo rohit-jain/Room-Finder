@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  latitude: 1.5
+  longitude: 1.5
+  vicinity: MyString
+  name: MyString
+  icon: MyString
+  types: MyString
+  url: MyString
+  listing_id: 1
+  gmaps: false
+
+two:
+  latitude: 1.5
+  longitude: 1.5
+  vicinity: MyString
+  name: MyString
+  icon: MyString
+  types: MyString
+  url: MyString
+  listing_id: 1
+  gmaps: false

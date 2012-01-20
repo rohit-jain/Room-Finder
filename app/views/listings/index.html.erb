@@ -1,0 +1,26 @@
+<h1>Rooms List</h1>
+<%= gmaps4rails(@json) %>
+<table border="1">
+  <tr>
+    <th>Address</th>
+    <th>Rent</th>
+    <th>Description</th>
+    <th>Rooms</th>
+    <th>Interested Users</th>
+  </tr>
+
+<% @listings.each do |listing| %>
+  <tr>
+    <td><%= listing.address %></td>
+    <td><%= listing.rent %></td>
+    <td><%= listing.description %></td>
+    <td><%= listing.rooms %></td>
+    <td><%= listing.intcount %></td>
+    <td><%= link_to 'Show', listing %></td>
+    <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+<%= link_to 'New Listing', new_listing_path %>

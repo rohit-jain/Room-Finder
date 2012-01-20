@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+
+<%=gmaps({ "markers" => { "data" => @json  }    })
+ %>
+ <%= @msg %> 
+  <b> Address:</b> <%=@listing.address -%> <br />
+  <b>Rent:</b> <%= @listing.rent %><br />
+  <b>Description:</b>  <%= @listing.description %> <br />
+  <b>Rooms:</b>  <%= @listing.rooms %><br />
+  <b>Interested Users Count: </b>  <%= @listing.intcount %><br />
+  <b>Interested Users Profiles </b>
+<% @tip.each do |t| %>
+  <a href="/users/<%=t.user_id%>"><%= (@user.find(t.user_id)).first.name  %> </a> 
+  <% end %>
+ <br />
+ <table border="1">
+  <tr>
+    <th>Type  </th>
+    <th>Name </th>
+    <th> Vincity</th>
+    <th> Longitude </th>
+    <th> Latitude</th>
+  </tr>
+
+<% @vv.each do |listing| %>
+  <tr>
+    <td><%= listing.types %></td>
+    <td><%= listing.name %></td>
+    <td><%= listing.vicinity %></td>
+    <td><%= listing.longitude %></td>
+    <td><%= listing.latitude %></td>
+    </tr>
+<% end %>
+</table>
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>

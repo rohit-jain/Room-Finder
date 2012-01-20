@@ -1,0 +1,48 @@
+<!DOCTYPE html>  
+<html>  
+<head>  
+  <title>Get A Room</title>  
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link rel="stylesheet" href="styles.css" type="text/css" />
+			
+            
+  <script type="text/javascript" src="js/jquery.js"></script>
+ <script type="text/javascript" src="js/slider.js"></script>
+ <script type="text/javascript" src="js/superfish.js"></script>
+<script type="text/javascript" src="js/custom.js"></script>
+
+  <%= yield :head %>
+</head>  
+<body class="homepage">
+<div id="container">
+	<div id="header">
+    	<h1><a href="/">Room<strong>        Finder   </strong></a></h1>
+        <h2>One Stop Solution For Finding Your Next Home</h2> </br>
+        <% if current_user %>  
+          Logged in as <%= current_user.email %>
+          <% end %>
+        <div class="clear"></div>
+    </div>
+    <div id="nav">
+    	<ul>
+    		<li><a href="/">Home</a></li>
+            <li><a href="/listings/">Listings</a></li>
+            <li>     <% if current_user %> <%= link_to "Log out", log_out_path %> 
+  		    <% else %>  
+  		      <%= link_to "Log in", log_in_path %>  
+           <% end %>    
+           </li>
+       
+       </ul>
+    </div>
+  <% flash.each do |name, msg| %>  
+    <%= content_tag :div, msg, :id => "flash#{name}" %>  
+  <% end %>  
+  
+<%= yield %>  
+  <%= yield :scripts %>
+</body>  
+</html>  

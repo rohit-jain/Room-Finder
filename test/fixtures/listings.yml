@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+
+one:
+  address: MyString
+  rent: 1
+  latitude: 1.5
+  longitude: 1.5
+  description: MyString
+  rooms: 1
+  intcount: 1
+  gmaps: false
+
+two:
+  address: MyString
+  rent: 1
+  latitude: 1.5
+  longitude: 1.5
+  description: MyString
+  rooms: 1
+  intcount: 1
+  gmaps: false
